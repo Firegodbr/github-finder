@@ -5,7 +5,8 @@ import GithubContext from '../../context/github/githubContext'
 const Search  = ({showClear, clearUsers, setAlert}) => {
     console.log(useContext)
     console.log(GithubContext)
-    const {searchUsers} = useContext(GithubContext);
+    const githubContext = useContext(GithubContext);
+    console.log(githubContext)
     const [text, setText] = useState('');
 
          
@@ -15,7 +16,7 @@ const Search  = ({showClear, clearUsers, setAlert}) => {
             setAlert('Please enter something', 'light');
         }
         else{
-            searchUsers(text);
+            githubContext.searchUsers(text);
             setText('');
         }
         
