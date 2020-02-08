@@ -8,10 +8,18 @@ import GithubContext from '../../context/github/githubContext';
 const Users = () => {
     const githubContext = useContext(GithubContext);
 
-    const {users, loading} = githubContext;
-    
+    const {users, loading, searched} = githubContext;
+    console.log(users);
+    console.log(searched)
     if (loading) {
         return <Spinner/>
+    }
+    if (searched && users.length === 0) {
+        return(
+            <div>
+                <h1>No results...</h1>
+            </div>
+        )
     }
     else{
         return(
