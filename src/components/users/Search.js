@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import PropTypes from 'prop-types'
+import GithubContext from '../../context/github/githubContext'
 
-
- const Search  = ({showClear, clearUsers, searchUsers, setAlert}) => {
-
+const Search  = ({showClear, clearUsers, setAlert}) => {
+    console.log(useContext)
+    console.log(GithubContext)
+    const {searchUsers} = useContext(GithubContext);
     const [text, setText] = useState('');
 
          
@@ -38,7 +40,6 @@ import PropTypes from 'prop-types'
 }
 
 Search.propTypes = {
-    searchUsers: PropTypes.func.isRequired,
     clearUsers: PropTypes.func.isRequired,
     showClear: PropTypes.bool.isRequired,
     setAlert: PropTypes.func.isRequired
