@@ -46,7 +46,7 @@ const User = ({match}) => {
                     </div>
                     <div>
                         {bio && <Fragment> <h3>Bio</h3><p>{bio}</p></Fragment>}
-                        <a href={html_url} className="btn btn-dark my-1">Visit Github Account</a>
+                        <a href={html_url} rel="noopener noreferrer" target="_blank" className="btn btn-dark my-1">Visit Github Account</a>
                         <ul>
                             <li>{login && <Fragment>
                                 <strong>Username: </strong>{''}{login}</Fragment>}
